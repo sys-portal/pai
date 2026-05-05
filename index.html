@@ -4449,6 +4449,7 @@
       let instructionBuilderPreviewVisible = false;
 
       const SUPABASE_URL = 'https://useful-camel-63.lspd.deno.net';
+      const SUPABASE_DIRECT_URL = 'https://symbwsvkrdoyiifwyrsu.supabase.co';
       const SUPABASE_KEY = 'sb_publishable_vnhEWnaSZ0ODquaa8oMxHw_X43pJi-6';
 
       
@@ -4518,7 +4519,7 @@
       function setupRealtime() {
         if (!window.supabase || realtimeChannel) return;
 
-        const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        const client = window.supabase.createClient(SUPABASE_DIRECT_URL, SUPABASE_KEY);
         realtimeChannel = client
           .channel('pai-live-db')
           .on('postgres_changes', { event: '*', schema: 'public', table: 'shifts' }, () => scheduleRealtimeRefresh('shifts'))
