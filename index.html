@@ -488,106 +488,6 @@
       .home-list li { position: relative; color: var(--text-2); font-size: 14px; line-height: 1.62; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,.48); border: 1px solid rgba(148,163,184,.12); }
       body.dark-theme .home-list li { background: rgba(15,23,42,.44); border-color: rgba(148,163,184,.10); }
       .home-list strong { color: var(--text-1); }
-
-      /* Home centered design */
-      .home-center-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 48px 24px 56px;
-        max-width: 680px;
-        margin: 0 auto;
-      }
-      .home-center-logo-ring {
-        width: 148px;
-        height: 148px;
-        border-radius: 36px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 28px;
-        background: linear-gradient(135deg, rgba(219,234,254,.98) 0%, rgba(191,219,254,.94) 52%, rgba(147,197,253,.88) 100%);
-        border: 1.5px solid rgba(59,130,246,.28);
-        box-shadow:
-          0 0 0 8px rgba(59,130,246,.07),
-          0 0 0 16px rgba(59,130,246,.04),
-          0 28px 56px rgba(37,99,235,.18),
-          inset 0 1px 0 rgba(255,255,255,.72);
-        animation: homeLogoRingPulse 3.6s ease-in-out infinite;
-      }
-      body.dark-theme .home-center-logo-ring {
-        background: linear-gradient(135deg, rgba(30,64,175,.52) 0%, rgba(30,58,138,.58) 54%, rgba(15,23,42,.92) 100%);
-        border-color: rgba(96,165,250,.36);
-        box-shadow:
-          0 0 0 8px rgba(59,130,246,.06),
-          0 0 0 16px rgba(59,130,246,.03),
-          0 28px 56px rgba(0,0,0,.32),
-          inset 0 1px 0 rgba(255,255,255,.06);
-      }
-      @keyframes homeLogoRingPulse {
-        0%, 100% { box-shadow: 0 0 0 8px rgba(59,130,246,.07), 0 0 0 16px rgba(59,130,246,.04), 0 28px 56px rgba(37,99,235,.18), inset 0 1px 0 rgba(255,255,255,.72); }
-        50% { box-shadow: 0 0 0 10px rgba(59,130,246,.11), 0 0 0 20px rgba(59,130,246,.06), 0 28px 56px rgba(37,99,235,.22), inset 0 1px 0 rgba(255,255,255,.72); }
-      }
-      .home-center-logo-img { width: 100%; height: 100%; object-fit: contain; display: block; }
-      .home-center-title {
-        margin: 0 0 14px;
-        font-size: 38px;
-        font-weight: 900;
-        letter-spacing: -.05em;
-        line-height: 1.05;
-        color: var(--text-1);
-      }
-      .home-center-desc {
-        margin: 0 0 22px;
-        color: var(--text-2);
-        font-size: 15px;
-        line-height: 1.75;
-        max-width: 520px;
-      }
-      .home-center-live {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 20px;
-        border-radius: 999px;
-        background: rgba(34,197,94,.10);
-        border: 1px solid rgba(34,197,94,.28);
-        margin-bottom: 32px;
-        box-shadow: 0 8px 20px rgba(34,197,94,.10);
-      }
-      body.dark-theme .home-center-live { background: rgba(34,197,94,.08); border-color: rgba(74,222,128,.24); }
-      .home-center-live-label { font-size: 13px; font-weight: 700; color: var(--text-2); }
-      .home-center-live-count { font-size: 16px; font-weight: 900; color: #16a34a; letter-spacing: -.02em; }
-      body.dark-theme .home-center-live-count { color: #4ade80; }
-      .home-center-pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-      }
-      .home-center-pill {
-        padding: 10px 18px;
-        border-radius: 999px;
-        background: rgba(255,255,255,.68);
-        border: 1px solid rgba(148,163,184,.22);
-        box-shadow: 0 8px 18px rgba(15,23,42,.06);
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--text-2);
-        backdrop-filter: blur(8px);
-      }
-      body.dark-theme .home-center-pill {
-        background: rgba(15,23,42,.54);
-        border-color: rgba(148,163,184,.16);
-        color: var(--text-2);
-      }
-      @media (max-width: 600px) {
-        .home-center-wrap { padding: 32px 16px 40px; }
-        .home-center-title { font-size: 28px; }
-        .home-center-logo-ring { width: 120px; height: 120px; border-radius: 28px; }
-      }
       .grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; align-items: start; }
       .side-card { display: flex; flex-direction: column; gap: 16px; align-self: start; }
       .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -3997,23 +3897,79 @@
       </div>
 
       <section class="portal-section is-active" id="page-home">
-        <div class="home-center-wrap">
-          <div class="home-center-logo-ring">
-            <img src="image.png" alt="PAI Logo" class="home-center-logo-img" onerror="this.style.display='none'; document.getElementById('fallbackLogo').style.display='flex';">
-            <div class="home-logo-shell" id="fallbackLogo">PAI</div>
+        <div class="home-grid home-grid-clean">
+          <div class="card home-hero-card home-hero-clean">
+            <div class="home-brand home-brand-clean">
+              <div class="home-logo-wrap home-logo-wrap-large">
+                <img src="https://i.ibb.co/F4K8rLYk/image.png" alt="PAI Logo" class="home-logo-image home-logo-image-large" onerror="this.style.display='none'; document.getElementById('fallbackLogo').style.display='flex';">
+                <div class="home-logo-shell" id="fallbackLogo">PAI</div>
+              </div>
+              <div class="home-eyebrow">Police Academy Instructors</div>
+              <p class="home-text home-text-clean">👮 Отдел Police Academy Instructors помогает кадетам освоить службу, проводит наборы, экзамены и лекции, сопровождает сотрудников на этапе адаптации и поддерживает единую базу знаний внутри портала.</p>
+              <div class="home-highlight-row home-highlight-row-clean">
+                <div class="home-highlight">
+                  <div class="home-highlight-value">Live</div>
+                  <div class="home-highlight-label">учёт смен</div>
+                </div>
+                <div class="home-highlight">
+                  <div class="home-highlight-value">PAI</div>
+                  <div class="home-highlight-label">структура отдела</div>
+                </div>
+                <div class="home-highlight">
+                  <div class="home-highlight-value">Base</div>
+                  <div class="home-highlight-label">инструкции</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="home-eyebrow" style="margin-bottom:18px;">Police Academy Instructors</div>
-          <h1 class="home-center-title">PAI Control Center</h1>
-          <p class="home-center-desc">Внутренний портал отдела Police Academy Instructors. Здесь сосредоточены учёт дежурств, состав отдела и база знаний для всего состава.</p>
-          <div class="home-center-live">
-            <span id="activeIndicator" class="activity-orb is-active"></span>
-            <span class="home-center-live-label">Активных смен сейчас:</span>
-            <span class="home-center-live-count" id="activeCount">0</span>
+
+          <div class="home-quick-grid">
+            <div class="card home-side-card">
+              <div class="mini-stat">
+                <div class="mini-icon"><span id="activeIndicator" class="activity-orb is-active"></span></div>
+                <div>
+                  <div class="mini-label">Активных смен сейчас</div>
+                  <div class="mini-value" id="activeCount">0</div>
+                </div>
+              </div>
+            </div>
+            <div class="card home-side-card">
+              <h2 class="card-title">Ответственность</h2>
+              <p class="card-subtitle" style="margin-bottom:0;">🛡️ Инструкторы PAI отвечают за качество подготовки курсантов, корректность экзаменов и соблюдение внутренних стандартов отдела.</p>
+            </div>
           </div>
-          <div class="home-center-pills">
-            <div class="home-center-pill">🎓 Обучение кадетов и наставничество</div>
-            <div class="home-center-pill">📋 Приём экзаменов и аттестации</div>
-            <div class="home-center-pill">🛡️ Соблюдение стандартов отдела</div>
+        </div>
+
+        <div class="home-bottom-grid">
+          <div class="stat-card">
+            <div class="stat-label">Направления работы</div>
+            <div class="stat-value">Основные направления PAI</div>
+            <ul class="home-list">
+              <li>🎖️ Обучение персонала. Проведение курсов по основным аспектам правоохранительной деятельности.</li>
+              <li>🎖️ Законодательная база. Обучение Уголовному, Административному кодексам и Федеральным постановлениям.</li>
+              <li>🎖️ Этика и деонтология. Этические нормы работы полиции, уважение прав человека и общественное доверие.</li>
+              <li>🎖️ Психология. Навыки взаимодействия с гражданами, управление конфликтами и переговоры.</li>
+            </ul>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Функции инструкторов</div>
+            <div class="stat-value">Ключевые задачи состава PAI</div>
+            <ul class="home-list">
+              <li>📕 Приём экзаменов — проведение теоретических и практических экзаменов у курсантов.</li>
+              <li>📗 Проведение лекций — обучение новобранцев основам службы, законодательству и процедурам.</li>
+              <li>📘 Аттестация — оценка готовности сотрудников к повышению и самостоятельной службе.</li>
+              <li>📙 Наставничество — индивидуальная работа с курсантами и помощь в адаптации.</li>
+              <li>📔 Методическая работа — разработка учебных материалов и программ обучения.</li>
+            </ul>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Разделы портала</div>
+            <div class="stat-value">Что доступно внутри системы</div>
+            <ul class="home-list">
+              <li>🕒 <strong>Дежурства.</strong> Живая система смен, AFK-статусов и недельного рейтинга.</li>
+              <li>🧩 <strong>Иерархия.</strong> Старший состав и закреплённые за ним сотрудники младшего состава.</li>
+              <li>📚 <strong>Инструкции.</strong> Рабочая база знаний отдела: экзамены, гос. волны, внутренние материалы и памятки.</li>
+            </ul>
           </div>
         </div>
       </section>
